@@ -1,0 +1,25 @@
+<h2 tabindex="0">{{title }}</h2>
+
+  <div class="row mt-4">
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="TvShow flex-wrap">
+        <div class="TvShow__images">
+          <div class="thumbnails d-flex" >
+            <div class="mr-2 TvShows_item" tabindex="0" *ngFor="let t of TvShow?.results">
+              <img
+                src="https://image.tmdb.org/t/p/w200{{ t?.poster_path }}"
+                alt="{{ t.name}}"
+              />
+              <div class="TvShow_description">
+                <div class="TvShow_name">
+                  <div>{{t?.name}}</div>
+                  <div>
+                    Vote Average: {{ t?.vote_average }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FolderTemplateComponent } from './components/folder-template/folder-template.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FolderTemplateTvComponent } from './components/folder-template-tv/folder-template-tv.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    FolderTemplateComponent
+    FolderTemplateComponent,
+    FolderTemplateTvComponent
   ],
   imports: [
     BrowserModule,

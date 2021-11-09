@@ -15,13 +15,13 @@ export class MovieService {
   getPopularMovies(): Observable<any> {
     return this.http.get(`${BaseUrl}/movie/popular?api_key=${ApiKey}`)
   }
-  getUpcomingMovies(){
+  getUpcomingMovies(): Observable<any>{
     return this.http.get(`${BaseUrl}/movie/upcoming?api_key=${ApiKey}`)
   }  
-  getTopRatedMovies(){
+  getTopRatedMovies(): Observable<any>{
     return this.http.get(`${BaseUrl}/movie/top_rated?api_key=${ApiKey}`)
   }
-  getNowPlayingMovies(){
+  getNowPlayingMovies(): Observable<any>{
     return this.http.get(`${BaseUrl}/movie/now_playing?api_key=${ApiKey}`)
   }
 }
