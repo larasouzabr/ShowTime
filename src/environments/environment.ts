@@ -1,6 +1,6 @@
 
 export const ApiKey ="5330ecf323f9caf08ceb1326b924d61c"
-
+export const BaseUrl ="https://api.themoviedb.org/3"
 
 export const environment = {
   production: false

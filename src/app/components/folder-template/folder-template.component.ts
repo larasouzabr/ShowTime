@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/dtos/Movie';
 
 @Component({
   selector: 'app-folder-template',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./folder-template.component.sass']
 })
 export class FolderTemplateComponent implements OnInit {
-
+  @Input() 
+  movies: Movie | null = null;
+  @Input() 
+  title: string | null = null;
+  @Input()
+  genre: string | null = null;
   constructor() { }
 
   ngOnInit(): void {

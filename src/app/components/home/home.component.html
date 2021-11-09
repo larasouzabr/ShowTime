@@ -1,3 +1,9 @@
 <div class="__home-main-content">
 ShowTime
 </div>
+
+<div class ="d-flex m-4 mt-5 flex-wrap">
+    <app-folder-template title="Popular Movies " [movies]="popular" class="mt-4" tabindex="0"></app-folder-template>
+    <app-folder-template title="Top Rated Movies" [movies]="topRated" class="mt-4" ></app-folder-template>  
+    <app-folder-template title="Now Playing Movies" [movies]="nowPlaying" class="mt-4" ></app-folder-template>  
+</div>
