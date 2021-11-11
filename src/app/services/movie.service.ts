@@ -24,4 +24,10 @@ export class MovieService {
   getNowPlayingMovies(): Observable<any>{
     return this.http.get(`${BaseUrl}/movie/now_playing?api_key=${ApiKey}`)
   }
+  getMovieGenres(): Observable<any>{
+    return this.http.get(`${BaseUrl}/genre/movie/list?api_key=${ApiKey}`)
+  }
+  getAllMovies(page:number):Observable<any>{
+    return this.http.get(`${BaseUrl}/movie/now_playing?api_key=${ApiKey}&page=${page}`)
+  }
 }

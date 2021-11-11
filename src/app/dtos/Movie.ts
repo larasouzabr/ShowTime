@@ -27,6 +27,7 @@ export interface MovieResults{
 export interface Dates {
     maximum: string;
     minimum: string;
-  }
+  } 
+
 
 

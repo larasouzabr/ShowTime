@@ -1,0 +1,15 @@
+  <div class="mt-5">
+    <div>
+      <div class="movie">
+        <div class="movie__images ">
+          <div class="thumbnails d-flex flex-wrap justify-content-center" >
+            <div class="m-2 movies_item" tabindex="0" *ngFor="let m of movies?.results">
+              <img
+                src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}"
+                alt="{{ m.title}}"
+              />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
