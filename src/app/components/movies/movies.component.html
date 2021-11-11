@@ -1,0 +1,21 @@
+<div class="header d-flex">
+<div class="title mt-3"  aria-labelledby="Movies section " tabindex="0" > Movies </div>
+<div class="genres mt-3">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Genres
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" tabindex="0">
+          <a class="dropdown-item" tabindex="0" >
+            <button class="genre-card" aria-label="Genres" tabindex="0" >
+              show
+            </button>
+            </a>
+        </div>
+      </div>
+     </div>
+<!--      routerLink="/genres/{{genre.id}}/{{genre.name}}"
+ --></div>
+ <div> 
+    <app-card-all-together [movies]="allMovies" ></app-card-all-together>
+ </div>
