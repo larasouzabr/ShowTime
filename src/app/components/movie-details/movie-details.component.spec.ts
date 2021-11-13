@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FolderTemplateTvComponent } from './folder-template-tv.component';
+import { MovieDetailsComponent } from './movie-details.component';
 
-describe('FolderTemplateTvComponent', () => {
-  let component: FolderTemplateTvComponent;
-  let fixture: ComponentFixture<FolderTemplateTvComponent>;
+describe('MovieDetailsComponent', () => {
+  let component: MovieDetailsComponent;
+  let fixture: ComponentFixture<MovieDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FolderTemplateTvComponent ]
+      declarations: [ MovieDetailsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FolderTemplateTvComponent);
+    fixture = TestBed.createComponent(MovieDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
