@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Genre } from 'src/app/dtos/genre';
+import { Observable, Subscription } from 'rxjs';
 import { Movie } from 'src/app/dtos/Movie';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -11,9 +10,10 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-  genres: Genre[] = [];
   allMovies!: Movie;
   subs: Subscription[] = [];
+  movies!: Observable<any>;
+  genres: any;
 
   constructor(
     private movieserv : MovieService,
@@ -21,11 +21,9 @@ export class MoviesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.movieserv.getMovieGenres().subscribe( res => {
-      this.genres = res.genres;
-    }
-  );
   this.subs.push(this.movieserv.getNowPlayingMovies().subscribe(data => this.allMovies = data));
+  this.subs.push(this.movieserv.getMovieGenres().subscribe(data => this.genres = data));
   }
-
 }
+
+

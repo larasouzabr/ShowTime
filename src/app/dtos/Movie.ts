@@ -1,6 +1,6 @@
 export interface Movie{
     page?: number;
-    results?: (MovieResults)[] | null;
+    results?: (MovieResults)[];
     total_results?: number;
     total_pages?: number;
     dates?: Dates;

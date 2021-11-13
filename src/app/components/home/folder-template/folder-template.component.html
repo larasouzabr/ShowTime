@@ -1,17 +1,18 @@
 <h2 tabindex="0">{{ title }}</h2>
-
-  <div class="row mt-4">
     <div class="d-flex flex-wrap justify-content-center">
       <div class="movie flex-wrap">
         <div class="movie__images">
           <div class="thumbnails d-flex" >
             <div class="mr-2 movies_item" tabindex="0" *ngFor="let m of movies?.results">
+              <a [routerLink]="'/movies/detail/' + m?.id">
               <img
                 src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}"
-                alt="{{ m.title}}"
+                alt="{{m.title}}"
               />
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
