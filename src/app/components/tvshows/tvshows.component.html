@@ -2,7 +2,10 @@
     <div class="title mt-5 ml-2 mr-4" aria-labelledby="Tv Shows section" tabindex="0" style="font-size: 40px;">
         Tv Shows
     </div>
+    <div class="mt-5 mr-5 ">
+        <input type="text" class="p-2" [(ngModel)]="term" placeholder="search for your favorite Tv Show">
+      </div>
 </div>
 <div>
-    <app-all-tv-shows [tvshows]="allTvShows"></app-all-tv-shows>
+    <app-all-tv-shows [tvshows]="allTvShows" [term] = "term"></app-all-tv-shows>
 </div>

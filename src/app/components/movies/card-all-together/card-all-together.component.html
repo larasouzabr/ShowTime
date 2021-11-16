@@ -1,9 +1,10 @@
-  <div class="mt-5">
+
+  <div class="mt-5 mr-2"> 
     <div>
       <div class="movie">
         <div class="movie__images ">
           <div class="thumbnails d-flex flex-wrap justify-content-center" >
-            <div class="m-2 movies_item" tabindex="0" *ngFor="let m of movies?.results">
+            <div class="m-2 movies_item" tabindex="0" *ngFor="let m of movies?.results | filter:term">
               <a [routerLink]="'/movies/detail/' + m?.id">
               <img
                 src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}"

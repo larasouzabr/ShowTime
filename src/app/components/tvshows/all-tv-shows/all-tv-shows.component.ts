@@ -9,6 +9,8 @@ import { TvShow } from 'src/app/dtos/TvShow';
 export class AllTvShowsComponent implements OnInit {
   @Input()
   tvshows : TvShow | null = null
+  @Input()
+  term: any;
   constructor() { }
 
   ngOnInit(): void {

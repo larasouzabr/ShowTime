@@ -12,7 +12,7 @@ export class MoviesComponent implements OnInit {
 
   allMovies!: Movie;
   subs: Subscription[] = [];
-
+  term: any;
   constructor(
     private movieserv : MovieService,
   ) {}
