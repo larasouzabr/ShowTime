@@ -1,5 +1,4 @@
-import { Component, ElementRef, Inject, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -7,7 +6,7 @@ import { Movie } from 'src/app/dtos/Movie';
 import { MovieDetails } from 'src/app/dtos/movieDetails';
 import { MovieVideo } from 'src/app/dtos/movieVideo';
 import { MovieService } from 'src/app/services/movie.service';
-import { SlicePipe } from '@angular/common';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-movie-details',
@@ -21,30 +20,28 @@ export class MovieDetailsComponent implements OnInit {
   SimilarMovies!: Movie;
 
   
-  @ViewChild('closeModal')
-  public closeModal!: ElementRef;
-  @ViewChild('openModal')
-  public openModal!: ElementRef;
-  @ViewChild('matTrailerDialog')
-  matTrailerDialog!: TemplateRef<any>;
 
   constructor(
     private movieserv: MovieService,
     private route: ActivatedRoute,
-    public trailerDialog: MatDialog,
-    public dialog: MatDialog,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      params => {
-        const id: any = params['id'];
-        this.getMovie(id);
-        this.getSimilarMovie(id);
-        this.getMovieVideo(id);
-      }
-    );
+    this.spinner.show();
+    setTimeout(() => {
+      this.route.params.subscribe(
+        params => {
+          const id: any = params['id'];
+          this.getMovie(id);
+          this.getSimilarMovie(id);
+          this.getMovieVideo(id);
+        }
+      );
+      this.spinner.hide();
+    }, 2000);
   }
+
   getMovie(id: any) {
     this.subs.push(this.movieserv.getMovie(id).pipe(take(1)).subscribe(
       data => this.movie = data)
@@ -68,29 +65,6 @@ export class MovieDetailsComponent implements OnInit {
     ));
   }
 
-  openDialog(): void {
-    const dialogRef = this.trailerDialog.open(this.matTrailerDialog, {});
-    dialogRef.disableClose = true;
-  }
 
 }
 
-
-
-
-@Component({
-  selector: 'app-movie-dialog',
-  templateUrl: './movie-dialog/movie-dialog.component.html'
-})
-export class AppMovieDialogComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<AppMovieDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) { }
-
-  closeDialog() {
-    this.dialogRef.close('Pizza!');
-  }
-
-}

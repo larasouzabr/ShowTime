@@ -12,7 +12,7 @@
         <div>
           <label tabindex="0" class="movie-overview mt-5 ml-2" style="font-size: 23px;">{{ movie?.overview }}</label>
           <div class="info row mt-2 ml-3 mb-3">
-            <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.release_date}}</p>
+            <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.release_date | date:'longDate'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.runtime}}min</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{movie?.vote_average}}<mat-icon class="mi-star ml-2">grade
               </mat-icon>
@@ -25,16 +25,6 @@
               class="button-genre mr-2">{{genre.name}}</button>
           </div>
       <!--   end of genre -->
-
-      <!-- watch trailer Button -->
-      <div class="mt-5">
-        <button class="button-trailer" aria-label="Trailer" (click)="openDialog()" >
-          <mat-icon class="icon-colored" style="background: rgb(188, 140, 197); border-radius: 50%">play_arrow
-          </mat-icon>
-          Watch Trailer
-        </button>
-      </div>
-      <!-- end of watch trailer Button -->
         </div>
       </div>
     </div>
@@ -47,3 +37,9 @@
   <!--End Similar Movies-->
   </div>
 </div>    
+<ngx-spinner
+bdColor="#000"
+size="medium"
+color="#fff"
+type="ball-spin-clockwise"
+></ngx-spinner>

@@ -9,7 +9,8 @@ import { Movie } from 'src/app/dtos/Movie';
 export class CardAllTogetherComponent implements OnInit {
   @Input() 
   movies: Movie | null = null;
-
+ @Input()
+  term:any;
   constructor() { }
 
   ngOnInit(): void {

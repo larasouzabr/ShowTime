@@ -13,7 +13,7 @@
         <div class="m-5">
           <label tabindex="0" class="tvshow-overview mb-5" style="font-size: 23px;">{{ tvshow?.overview }}</label>
           <div class="info row mt-2 ml-3 mb-3">
-            <p class="infoElement p-2 m-2" tabindex="0"> {{tvshow?.first_air_date| date:'mediumDate'}}</p>
+            <p class="infoElement p-2 m-2" tabindex="0"> {{tvshow?.first_air_date | date:'longDate'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{tvshow?.vote_average}}<mat-icon class="mi-star ml-2">grade
               </mat-icon>
             </p>

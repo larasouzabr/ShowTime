@@ -34,6 +34,9 @@ import { MovieDialogComponent } from './components/movie-details/movie-dialog/mo
 import { TvshowsComponent } from './components/tvshows/tvshows.component';
 import { TvshowsDetailsComponent } from './components/tvshows/tvshows-details/tvshows-details.component';
 import { AllTvShowsComponent } from './components/tvshows/all-tv-shows/all-tv-shows.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxSpinnerModule } from "ngx-spinner";
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,8 @@ import { AllTvShowsComponent } from './components/tvshows/all-tv-shows/all-tv-sh
     FormsModule,
     ReactiveFormsModule,
     SwiperModule,
+    Ng2SearchPipeModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

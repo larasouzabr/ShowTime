@@ -12,7 +12,7 @@ export class TvshowsComponent implements OnInit {
 
   allTvShows!: TvShow;
   subs: Subscription[] = [];
-
+  term:any
   constructor(
     private tvshowserv : TvShowsService,
   ) {

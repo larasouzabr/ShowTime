@@ -2,8 +2,11 @@
   <div class="title mt-5 ml-2" aria-labelledby="Movies section" tabindex="0" style="font-size: 50px;">
     Movies
   </div>
+  <div class="mt-5 mr-5 ">
+    <input type="text" class="p-2" [(ngModel)]="term" placeholder="search for your favorite movie">
+  </div>
 </div> 
- 
+
   <div>
-    <app-card-all-together [movies]="allMovies"></app-card-all-together>
+    <app-card-all-together [movies]="allMovies" [term] = "term"></app-card-all-together>
   </div>
