@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { TvshowsDetailsComponent } from './components/tvshows/tvshows-details/tvshows-details.component';
+import { TvshowsComponent } from './components/tvshows/tvshows.component';
 import { RoutingGuard } from './guards/routing.guard';
 
 const routes: Routes = [
@@ -19,6 +21,14 @@ const routes: Routes = [
       {
         path: "movies",
         component: MoviesComponent,
+      }, 
+      {
+        path: "tvshow",
+        component: TvshowsComponent,
+      }, 
+      {
+        path:"tvshow/detail/:id",
+        component: TvshowsDetailsComponent
       },
       {
         path:"movies/detail/:id",

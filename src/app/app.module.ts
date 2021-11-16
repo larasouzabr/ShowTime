@@ -31,6 +31,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SwiperModule} from 'swiper/angular';
 import { MovieDialogComponent } from './components/movie-details/movie-dialog/movie-dialog.component';
+import { TvshowsComponent } from './components/tvshows/tvshows.component';
+import { TvshowsDetailsComponent } from './components/tvshows/tvshows-details/tvshows-details.component';
+import { AllTvShowsComponent } from './components/tvshows/all-tv-shows/all-tv-shows.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,10 @@ import { MovieDialogComponent } from './components/movie-details/movie-dialog/mo
     MoviesComponent,
     CardAllTogetherComponent,
     MovieDetailsComponent,
-    MovieDialogComponent
+    MovieDialogComponent,
+    TvshowsComponent,
+    TvshowsDetailsComponent,
+    AllTvShowsComponent
   ],
   imports: [
     BrowserModule,

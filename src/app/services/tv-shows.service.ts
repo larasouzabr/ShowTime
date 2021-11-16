@@ -23,4 +23,10 @@ export class TvShowsService {
   getLatestTvShows(): Observable<any>{
     return this.http.get(`${BaseUrl}/tv/latest?api_key=${ApiKey}`)
   }
+  getTvShowsDetails(id:number): Observable<any>{
+    return this.http.get(`${BaseUrl}/tv/${id}?api_key=${ApiKey}&append_to_response=videos,images,details`)
+  }
+  getSimilarTvShow(id:number): Observable<any>{
+    return this.http.get(`${BaseUrl}/tv/${id}/similar?api_key=${ApiKey}&append_to_response=videos,images,details`)
+  }
 }
