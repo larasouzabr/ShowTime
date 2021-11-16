@@ -50,14 +50,18 @@ export class MovieService {
   }
 
   getPersonDetail(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}person/${id}?api_key=${ApiKey}`)
+    return this.http.get(`${BaseUrl}/person/${id}?api_key=${ApiKey}`)
   }
 
   getPersonExternalData(id: string) {
-    return this.http.get(`${BaseUrl}person/${id}/external_ids?api_key=${ApiKey}`)
+    return this.http.get(`${BaseUrl}/person/${id}/external_ids?api_key=${ApiKey}`)
   }
 
   getPersonCast(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}person/${id}/movie_credits?api_key=${ApiKey}`)
+    return this.http.get(`${BaseUrl}/person/${id}/movie_credits?api_key=${ApiKey}`)
+  }
+
+  searchMovies(name:string):Observable<any>{
+    return this.http.get(`${BaseUrl}/search/movie?api_key=${ApiKey}&query=${name}`)
   }
 }
