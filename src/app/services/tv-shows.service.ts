@@ -29,4 +29,7 @@ export class TvShowsService {
   getSimilarTvShow(id:number): Observable<any>{
     return this.http.get(`${BaseUrl}/tv/${id}/similar?api_key=${ApiKey}&append_to_response=videos,images,details`)
   }
+  getAllTvShows(page:number): Observable<any>{
+    return this.http.get(`${BaseUrl}/tv/popular?api_key=${ApiKey}&language=en-US&page=${page}`)
+  }
 }

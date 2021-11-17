@@ -12,14 +12,13 @@ import { TvShowsService } from 'src/app/services/tv-shows.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+
   sticky = false;
   subs: Subscription[] = [];
   trending!: Movie;
   popular!: Movie;
   topRated!: Movie;
-  originals!: Movie;
   nowPlaying!: Movie;
-  upcoming!: Movie;
   popularTvShows!: TvShow;
   OnTheAirTvShows!: TvShow;
   TopRatedTvShows!: TvShow;
@@ -33,7 +32,6 @@ export class HomeComponent implements OnInit {
     // Movies
     this.subs.push(this.movieserv.getPopularMovies().subscribe(data => this.popular = data));
     this.subs.push(this.movieserv.getTopRatedMovies().subscribe(data => this.topRated = data));
-    this.subs.push(this.movieserv.getUpcomingMovies().subscribe(data => this.upcoming = data));
     this.subs.push(this.movieserv.getNowPlayingMovies().subscribe(data => this.nowPlaying = data));
 
    // Tv Shows
@@ -42,5 +40,10 @@ export class HomeComponent implements OnInit {
    this.subs.push(this.TVshowServ.getTopRatedTvShows().subscribe(data => this.TopRatedTvShows = data));
   }
   
- 
+  onSwiper(swiper: any) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
 }
