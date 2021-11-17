@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from 'src/app/dtos/Movie';
 
 @Component({
@@ -7,9 +7,11 @@ import { Movie } from 'src/app/dtos/Movie';
   styleUrls: ['./card-all-together.component.sass']
 })
 export class CardAllTogetherComponent implements OnInit {
+ 
+
   @Input() 
   movies: Movie | null = null;
- @Input()
+  @Input()
   term:any;
   constructor() { }
 

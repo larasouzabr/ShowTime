@@ -3,7 +3,7 @@
       <div class="tvshow">
         <div class="tvshow__images ">
           <div class="thumbnails d-flex flex-wrap justify-content-center" >
-            <div class=" m-2 tvshows_item" tabindex="0" *ngFor="let t of tvshows?.results |filter:term">
+            <div class=" m-2 tvshows_item" tabindex="0" *ngFor="let t of tvshows?.results">
               <a [routerLink]="'/tvshow/detail/' + t?.id">
               <img
                 src="https://image.tmdb.org/t/p/w200{{ t?.poster_path }}"

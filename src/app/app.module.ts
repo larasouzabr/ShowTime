@@ -36,6 +36,7 @@ import { TvshowsDetailsComponent } from './components/tvshows/tvshows-details/tv
 import { AllTvShowsComponent } from './components/tvshows/all-tv-shows/all-tv-shows.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxPaginationModule } from 'ngx-pagination';
  
 @NgModule({
   declarations: [
@@ -57,7 +58,6 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
     MatButtonModule,
     MatTabsModule,
     MatChipsModule,
@@ -65,19 +65,14 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatCardModule,
-    MatTooltipModule,
     MatPaginatorModule,
-    MatMenuModule,
-    MatDialogModule,
-    MatSliderModule,
     MatExpansionModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    SwiperModule,
     Ng2SearchPipeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

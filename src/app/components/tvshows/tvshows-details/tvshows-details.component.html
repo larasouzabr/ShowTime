@@ -8,12 +8,12 @@
       </div>
 
       <div class="pl-2">
-        <h2 class="tvshow-main-title mt-5" tabindex="0">{{ tvshow?.name }}</h2>
-        <p class="tagline p-2 m-2" tabindex="0" style="font-size: 20px;"> {{tvshow?.tagline}} </p>
-        <div class="m-5">
-          <label tabindex="0" class="tvshow-overview mb-5" style="font-size: 23px;">{{ tvshow?.overview }}</label>
-          <div class="info row mt-2 ml-3 mb-3">
-            <p class="infoElement p-2 m-2" tabindex="0"> {{tvshow?.first_air_date | date:'longDate'}}</p>
+        <h2 class="tvshow-main-title mt-5 d-flex justify-content-center" tabindex="0">{{ tvshow?.name }}</h2>
+        <p class="tagline p-2 m-2 d-flex justify-content-center" tabindex="0" style="font-size: 20px;"> {{tvshow?.tagline}} </p>
+        <div class="infoMain m-5">
+          <label tabindex="0" class="tvshow-overview ml-3 mb-5 p-3 text-justify" style="font-size: 23px;">{{ tvshow?.overview }}</label>
+          <div class="info row mt-2 ml-3 mb-3 d-flex justify-content-center">
+            <p class="infoElement p-2 m-2" tabindex="0"> {{tvshow?.first_air_date | date:'y'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{tvshow?.vote_average}}<mat-icon class="mi-star ml-2">grade
               </mat-icon>
             </p>
@@ -22,7 +22,7 @@
           </div>
           
         <!--  genre -->
-          <div class="mt-5 ml-4">
+          <div class="mt-5 ml-4 pb-3 d-flex justify-content-center">
             <button *ngFor="let genre of tvshow?.genres" mat-raised-button color="primary" aria-label="genres"
               class="button-genre mr-2">{{genre.name}}</button>
           </div>

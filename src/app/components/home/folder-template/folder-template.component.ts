@@ -11,8 +11,7 @@ export class FolderTemplateComponent implements OnInit {
   movies: Movie | null = null;
   @Input() 
   title: string | null = null;
-  @Input()
-  genre: string | null = null;
+
   constructor() { }
 
   ngOnInit(): void {

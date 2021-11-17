@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiKey, BaseUrl } from 'src/environments/environment';
 import { map } from 'rxjs/operators'
+import { MovieResults } from '../dtos/Movie';
 
 @Injectable({
   providedIn: 'root'
@@ -63,5 +64,8 @@ export class MovieService {
 
   searchMovies(name:string):Observable<any>{
     return this.http.get(`${BaseUrl}/search/movie?api_key=${ApiKey}&query=${name}`)
+  }
+  getAllMovies(page: number):Observable<any>{
+  return this.http.get(`${BaseUrl}/movie/now_playing?api_key=${ApiKey}&language=en-US&page=${page}`)
   }
 }
