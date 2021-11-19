@@ -5,8 +5,14 @@
 </div>
 <div>
     <app-all-tv-shows [tvshows]="allTvShows" ></app-all-tv-shows>
-    <div class=" d-flex justify-content-end"> 
+    <div class=" d-flex justify-content-center"> 
         <mat-paginator [length]="total_items" [pageSize]="20" (page)="changePage($event)">
         </mat-paginator>
     </div>
 </div>
+<ngx-spinner
+bdColor="#000"
+size="medium"
+color="#fff"
+type="ball-spin-clockwise"
+></ngx-spinner>

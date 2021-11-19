@@ -1,0 +1,12 @@
+<div class="thumbnail"> 
+    <a [routerLink]="'/movies/detail/' + movie?.id" *ngIf="movie?.title">
+        <img src="https://image.tmdb.org/t/p/w300/{{movie?.poster_path}}" *ngIf="movie?.poster_path">
+        <img src="https://www.shaw.sg/Content/Images/concession/default/en-SG/placeholder-conc.png" *ngIf="!movie?.poster_path" class="no-image">
+        </a>
+</div>
+<div class="thumbnail"> 
+    <a  [routerLink]="'/tvshow/detail/' + movie?.id" *ngIf="movie?.name">
+        <img src="https://image.tmdb.org/t/p/w300/{{movie?.poster_path}}" *ngIf="movie?.poster_path">
+        <img src="https://www.shaw.sg/Content/Images/concession/default/en-SG/placeholder-conc.png" *ngIf="!movie?.poster_path" class="no-image">
+        </a>
+</div>

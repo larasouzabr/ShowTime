@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { TvShow } from 'src/app/dtos/TvShow';
@@ -15,11 +16,17 @@ export class TvshowsComponent implements OnInit {
   term:any
   constructor(
     private tvshowserv : TvShowsService,
+    private spinner: NgxSpinnerService
   ) {
    }
 
    ngOnInit(): void {
-    this.getAllTvShows(1);
+    this.spinner.show();
+    setTimeout(() => {
+      this.getAllTvShows(1);
+      this.spinner.hide();
+    }, 2000);
+   
   }
   getAllTvShows(page: number) {
     this.tvshowserv.getAllTvShows(page).pipe(take(1)).subscribe(

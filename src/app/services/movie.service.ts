@@ -32,39 +32,21 @@ export class MovieService {
   SearchMovie(query:string): Observable<any>{
     return this.http.get(`${BaseUrl}/search/movie?api_key=${ApiKey}&query=${query}`)
   }
-  getMoviesByGenre(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}genre/${id}/movies?api_key=${ApiKey}`)
+  getMoviesByGenre(id:number): Observable<any> {
+    return this.http.get(`${BaseUrl}/genre/${id}/movies?api_key=${ApiKey}`)
   }
   getMovie(id: number): Observable<any> {
     return this.http.get(`${BaseUrl}/movie/${id}?api_key=${ApiKey}&append_to_response=videos,images,details,reviews,similar`)
   }
-  getMovieCredits(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}movie/${id}/credits?api_key=${ApiKey}`)
-  }
-
-  getMovieVideos(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}movie/${id}/videos?api_key=${ApiKey}`)
-  }
-
+  
   getSimilarMovies(id: number): Observable<any> {
     return this.http.get(`${BaseUrl}/movie/${id}/similar?api_key=${ApiKey}`)
   }
 
-  getPersonDetail(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}/person/${id}?api_key=${ApiKey}`)
-  }
-
-  getPersonExternalData(id: string) {
-    return this.http.get(`${BaseUrl}/person/${id}/external_ids?api_key=${ApiKey}`)
-  }
-
-  getPersonCast(id: string): Observable<any> {
-    return this.http.get(`${BaseUrl}/person/${id}/movie_credits?api_key=${ApiKey}`)
-  }
-
   searchMovies(name:string):Observable<any>{
-    return this.http.get(`${BaseUrl}/search/movie?api_key=${ApiKey}&query=${name}`)
+    return this.http.get(`${BaseUrl}/search/multi?api_key=${ApiKey}&query=${name}`)
   }
+
   getAllMovies(page: number):Observable<any>{
   return this.http.get(`${BaseUrl}/movie/now_playing?api_key=${ApiKey}&language=en-US&page=${page}`)
   }

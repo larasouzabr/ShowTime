@@ -3,7 +3,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { Movie } from 'src/app/dtos/Movie';
 import { MovieService } from 'src/app/services/movie.service';
-import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-movies',
@@ -14,8 +13,6 @@ export class MoviesComponent implements OnInit {
 
   allMovies!: Movie;
   subs: Subscription[] = [];
-  term: any;
- 
   total_items!: any;
 
 
@@ -25,13 +22,19 @@ export class MoviesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllMovies(1);
+    this.spinner.show();
+    setTimeout(() => {
+      this.getAllMovies(1);
+      this.spinner.hide();
+    }, 2000);
   }
   getAllMovies(page: number) {
-    this.movieserv.getAllMovies(page).pipe(take(1)).subscribe(
+    this.movieserv.getAllMovies(page).subscribe(
       res => {
+        console.log(res)
         this.total_items = res.total_results;
         this.allMovies = res;
+
       }, () => {}
     );
   }
