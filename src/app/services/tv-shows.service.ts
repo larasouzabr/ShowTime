@@ -32,4 +32,7 @@ export class TvShowsService {
   getAllTvShows(page:number): Observable<any>{
     return this.http.get(`${BaseUrl}/tv/popular?api_key=${ApiKey}&language=en-US&page=${page}`)
   }
+  getTvShowGenres():Observable<any>{
+    return this.http.get(`${BaseUrl}/genre/tv/list?api_key=${ApiKey}`)
+  }
 }

@@ -32,7 +32,7 @@ export class TvshowsDetailsComponent implements OnInit {
   }
 
   getTvShow(id: any) {
-    this.subs.push(this.tvServ.getTvShowsDetails(id).pipe(take(1)).subscribe(
+    this.subs.push(this.tvServ.getTvShowsDetails(id).subscribe(
       data => this.tvshow = data)
     );
   }

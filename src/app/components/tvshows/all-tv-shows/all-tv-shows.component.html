@@ -6,7 +6,7 @@
             <div class=" m-2 tvshows_item" tabindex="0" *ngFor="let t of tvshows?.results">
               <a [routerLink]="'/tvshow/detail/' + t?.id">
               <img
-                src="https://image.tmdb.org/t/p/w200{{ t?.poster_path }}"
+                src="https://image.tmdb.org/t/p/w300{{ t?.poster_path }}"
                 alt="{{t.name}}"
               />
               </a>

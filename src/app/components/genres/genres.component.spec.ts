@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MovieDialogComponent } from './movie-dialog.component';
+import { GenresComponent } from './genres.component';
 
-describe('MovieDialogComponent', () => {
-  let component: MovieDialogComponent;
-  let fixture: ComponentFixture<MovieDialogComponent>;
+describe('GenresComponent', () => {
+  let component: GenresComponent;
+  let fixture: ComponentFixture<GenresComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovieDialogComponent ]
+      declarations: [ GenresComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MovieDialogComponent);
+    fixture = TestBed.createComponent(GenresComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
