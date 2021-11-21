@@ -10,7 +10,8 @@
       <div class="pl-2">
         <h2 class="movie-main-title mt-2 p-3 d-flex justify-content-center" tabindex="0">{{movie?.title}}</h2>
         <div class="infoMain m-5">
-          <label tabindex="0" class="movie-overview ml-3 mb-5 text-justify p-3" style="font-size: 23px;">{{ movie?.overview }}</label>
+          <label tabindex="0"
+            class="movie-overview ml-3 mb-5 text-justify p-3" style="font-size: 23px;">{{ movie?.overview }}</label>
           <div class="info row mt-2 ml-3 mb-3 d-flex justify-content-center">
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.release_date | date:'y'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{movie?.vote_average}}<mat-icon class="mi-star ml-2">grade</mat-icon></p>
@@ -19,8 +20,13 @@
           
         <!--  genre -->
           <div class="mt-5 ml-2 p-3 d-flex justify-content-center">
-            <button *ngFor="let genre of movie?.genres" mat-raised-button color="primary" aria-label="genres"
+            <a
+            *ngFor="let genre of movie?.genres"
+            routerLink="/genres/movie/{{genre.id}}/{{ genre.name }}"
+          >
+            <button  mat-raised-button color="primary" aria-label="genres"
               class="button-genre mr-2">{{genre.name}}</button>
+            </a>
           </div>
       <!--   end of genre -->
         </div>

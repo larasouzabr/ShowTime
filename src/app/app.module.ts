@@ -33,7 +33,9 @@ import { GenresComponent } from './components/genres/genres.component';
 import { MovieByGenreComponent } from './components/genres/movie-by-genre/movie-by-genre.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchResultComponent } from './components/search/search-result/search-result.component';
- 
+import { MatCardModule } from '@angular/material/card';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +67,7 @@ import { SearchResultComponent } from './components/search/search-result/search-
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MatCardModule,
     MatPaginatorModule,
     MatExpansionModule,
     CommonModule,
@@ -72,7 +75,8 @@ import { SearchResultComponent } from './components/search/search-result/search-
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

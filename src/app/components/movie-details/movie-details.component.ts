@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { MovieDetails } from 'src/app/dtos/movieDetails';
 import { MovieVideo } from 'src/app/dtos/movieVideo';
 import { MovieService } from 'src/app/services/movie.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -19,12 +20,12 @@ export class MovieDetailsComponent implements OnInit {
   subs: Subscription[] = [];
   SimilarMovies!: Movie;
 
-  
 
   constructor(
     private movieserv: MovieService,
     private route: ActivatedRoute,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private themeService: ThemeService
   ) { }
 
   ngOnInit(): void {
@@ -42,14 +43,15 @@ export class MovieDetailsComponent implements OnInit {
     }, 2000);
   }
 
+
   getMovie(id: any) {
-    this.subs.push(this.movieserv.getMovie(id).pipe(take(1)).subscribe(
+    this.subs.push(this.movieserv.getMovie(id).subscribe(
       data => this.movie = data)
     );
   }
 
   getSimilarMovie(id: any) {
-    this.subs.push(this.movieserv.getSimilarMovies(id).pipe(take(1)).subscribe(
+    this.subs.push(this.movieserv.getSimilarMovies(id).subscribe(
       data => this.SimilarMovies = data)
     );
   }

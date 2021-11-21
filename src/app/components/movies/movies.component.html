@@ -1,12 +1,12 @@
 <div class="header d-flex justify-content-between">
-  <div class="title mt-5 ml-2" aria-labelledby="Movies section" tabindex="0" style="font-size: 50px;">
+  <div class="title mt-5 ml-2" aria-labelledby="Movies section" tabindex="0" style="font-size: 70px;">
     Movies
   </div>
 </div>
 
 <div>
   <app-card-all-together [movies]="allMovies"></app-card-all-together>
-  <div class=" d-flex justify-content-end"> 
+  <div class=" d-flex justify-content-center mt-5"> 
     <mat-paginator [length]="total_items" [pageSize]="10" (page)="changePage($event)">
     </mat-paginator>
   </div>

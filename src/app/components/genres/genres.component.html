@@ -1,8 +1,8 @@
-<div class="d-flex">
-  <div>
+<div class="d-flex p-5">
+  <div class="mt-5 ">
     <div class="row">
-      <div class="movies-genres d-flex row justify-content-center">
-        <h1 class="mt-2">Movies</h1>
+      <div class="mt-2 movies-genres d-flex row justify-content-center">
+        <h1 class="mt-2 mb-5" style="font-size: 50px;font-weight: 700;">Movies</h1>
         <div class=" mr-3 d-flex flex-wrap justify-content-center">
           <a
             *ngFor="let genre of MoviesGenres"
@@ -24,30 +24,6 @@
     </div>
   </div>
 
-  <div>
-    <div class="row">
-      <div class="m-0 movies-genres d-flex row justify-content-center">
-        <h1 class="mt-2">Tv Shows</h1>
-        <div class="d-flex flex-wrap justify-content-center">
-          <a
-            *ngFor="let genre of TvShowsGenres"
-            routerLink="/genres/tvshow/{{genre.id}}/{{ genre.name }}"
-          >
-            <div class="m-2 justify-content-md-center">
-              <button
-                mat-raised-button
-                color="primary"
-                class="genre-card"
-                aria-label="genre"
-              >
-                {{ genre.name }}
-              </button>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 <ngx-spinner
 bdColor="#000"

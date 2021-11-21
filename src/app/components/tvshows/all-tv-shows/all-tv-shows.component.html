@@ -9,6 +9,7 @@
                 src="https://image.tmdb.org/t/p/w300{{ t?.poster_path }}"
                 alt="{{t.name}}"
               />
+              <img class="no-poster" src="https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" *ngIf="!t?.poster_path">
               </a>
           </div>
         </div>
