@@ -8,6 +8,8 @@ import { TvShow } from 'src/app/dtos/TvShow';
 })
 export class FolderTemplateTvComponent implements OnInit {
   @Input() 
+  sliderConfig: any;
+  @Input() 
   TvShow: TvShow | null = null;
   @Input() 
   title: string | null = null;

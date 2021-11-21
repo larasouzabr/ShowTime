@@ -1,18 +1,17 @@
-<h2 class="mb-4" tabindex="0" style="font-size: 40px;">{{ title }}</h2>
-    <div class="d-flex flex-wrap justify-content-center">
-      <div class="movie flex-wrap">
-        <div class="movie__images">
-          <div class="thumbnails d-flex" >
-            <div class="mr-2 movies_item" tabindex="0" *ngFor="let m of movies?.results">
-              <a [routerLink]="'/movies/detail/' + m?.id">
-              <img
-                src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}"
-                alt="{{m.title}}"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2 class="mt-5 mb-5" style="font-size: 50px; font-weight: 800;"tabindex="0">{{title}}</h2>
 
+
+<div class="movie__images">
+    <ngx-slick-carousel [config]="sliderConfig" class="carousel">
+      <div class="slick-item" tabindex="0" *ngFor="let m of movies?.results" ngxSlickItem>
+        <a [routerLink]="'/movies/detail/' + m?.id">
+          <img
+            src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}" 
+            alt="{{ m.title}}"
+            *ngIf="m?.poster_path"
+          />
+          <img class="no-poster" src="https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" *ngIf="!m?.poster_path">
+          </a>
+      </div>
+    </ngx-slick-carousel>
+  </div>

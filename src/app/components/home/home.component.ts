@@ -5,6 +5,7 @@ import { Movie } from 'src/app/dtos/Movie';
 import { TvShow } from 'src/app/dtos/TvShow';
 import { MovieService } from 'src/app/services/movie.service';
 import { TvShowsService } from 'src/app/services/tv-shows.service';
+ 
 
 
 @Component({
@@ -14,9 +15,8 @@ import { TvShowsService } from 'src/app/services/tv-shows.service';
 })
 export class HomeComponent implements OnInit {
 
-  sticky = false;
   subs: Subscription[] = [];
-  trending!: Movie;
+  trending!:Movie;
   popular!: Movie;
   topRated!: Movie;
   nowPlaying!: Movie;
@@ -24,11 +24,18 @@ export class HomeComponent implements OnInit {
   OnTheAirTvShows!: TvShow;
   TopRatedTvShows!: TvShow;
 
+  sliderConfig = {
+    slidesToShow: 8,
+    slidesToScroll: 2,
+    arrows: true,
+    autoplay: false
+  };
+
   constructor(
     private movieserv : MovieService,
     private TVshowServ: TvShowsService,
     private spinner: NgxSpinnerService 
-      ) { }
+      ) {}
 
   ngOnInit(): void {
     this.spinner.show();
@@ -44,13 +51,8 @@ export class HomeComponent implements OnInit {
     this.subs.push(this.TVshowServ.getTopRatedTvShows().subscribe(data => this.TopRatedTvShows = data));
     this.spinner.hide(); 
     }, 2000);
-   
+
   }
-  
-  onSwiper(swiper: any) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
-  }
+
+
 }

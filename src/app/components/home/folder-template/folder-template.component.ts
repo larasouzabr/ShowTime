@@ -8,9 +8,11 @@ import { Movie } from 'src/app/dtos/Movie';
 })
 export class FolderTemplateComponent implements OnInit {
   @Input() 
+  sliderConfig: any;
+  @Input() 
   movies: Movie | null = null;
   @Input() 
-  title: string | null = null;
+  title!: string;
 
   constructor() { }
 

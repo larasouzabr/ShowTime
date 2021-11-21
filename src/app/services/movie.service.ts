@@ -14,6 +14,9 @@ export class MovieService {
   private http: HttpClient
   ) {}
 
+  getMovies(type: string, page: number): Observable<any> {
+    return this.http.get(`${BaseUrl}movie/${type}?api_key=${ApiKey}&page=${page}`)
+  }
   getPopularMovies(): Observable<any> {
     return this.http.get(`${BaseUrl}/movie/popular?api_key=${ApiKey}`)
   }
@@ -28,9 +31,6 @@ export class MovieService {
   }
   getMovieGenres(): Observable<any>{
     return this.http.get(`${BaseUrl}/genre/movie/list?api_key=${ApiKey}`)
-  }
-  SearchMovie(query:string): Observable<any>{
-    return this.http.get(`${BaseUrl}/search/movie?api_key=${ApiKey}&query=${query}`)
   }
   getMoviesByGenre(id:number): Observable<any> {
     return this.http.get(`${BaseUrl}/genre/${id}/movies?api_key=${ApiKey}`)

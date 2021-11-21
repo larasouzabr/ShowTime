@@ -1,19 +1,16 @@
-<h2 class="mb-4" tabindex="0" style="font-size: 40px;" tabindex="0">{{title }}</h2>
+<h2 class="mt-5 mb-5" style="font-size: 50px; font-weight: 800;" tabindex="0" >{{title}}</h2>
 
-  <div class="row mt-4">
-    <div class="d-flex flex-wrap justify-content-center">
-      <div class="TvShow flex-wrap">
-        <div class="TvShow__images">
-          <div class="thumbnails d-flex" >
-            <div class="mr-2 TvShows_item" tabindex="0" *ngFor="let t of TvShow?.results">
-              <a [routerLink]="'/tvshow/detail/' + t?.id">
-              <img
-                src="https://image.tmdb.org/t/p/w200{{ t?.poster_path }}"
-                alt="{{ t.name}}"
-              />
-              </a>
-          </div>
+<div class="tvShow">
+      <ngx-slick-carousel [config]="sliderConfig" class="carousel">
+        <div class="slick-item" tabindex="0" *ngFor="let t of TvShow?.results" ngxSlickItem>
+          <a [routerLink]="'/tvshow/detail/' + t?.id">
+            <img
+              src="https://image.tmdb.org/t/p/w200{{ t?.poster_path }}"
+              alt="{{t.name}}"
+              *ngIf="t?.poster_path"
+            />
+            <img class="no-poster" src="https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" *ngIf="!t?.poster_path">
+            </a>
         </div>
-      </div>
-    </div>
-  </div>
+      </ngx-slick-carousel>
+</div>
