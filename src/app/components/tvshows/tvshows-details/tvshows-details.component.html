@@ -1,6 +1,5 @@
-<div class="flex-wrap"
-  [style.background-image]="('linear-gradient(rgba(52,41,49,0.80), rgba(0,0,0,1.0)), url('+'https://image.tmdb.org/t/p/w1280'+tvshow?.backdrop_path+')')">
-  <div>
+<div class="flex-wrap">
+  <div class="banner" [style.background-image]="('linear-gradient(rgba(52,41,49,0.80), rgba(0,0,0,1.0)), url('+'https://image.tmdb.org/t/p/w1280'+tvshow?.backdrop_path+')')">
     <div class="d-flex">
       <div>
         <img src="https://image.tmdb.org/t/p/w500/{{ tvshow?.poster_path }}" alt="{{ tvshow?.title }}" tabindex="0"
@@ -30,15 +29,16 @@
         </div>
       </div>
     </div>
-
-<!--   Similar tvShows   --> 
-    <div class="Similar-tvShows mt-5">
-        <h1 tabindex="0" class="ml-5" style="font-size: 50px;font-weight: 600; text-align: center;">SIMILAR TV SHOWS</h1>
-        <app-all-tv-shows [tvshows]="SimilarTvShows"></app-all-tv-shows>    
-      </div>      
-  <!--End Similar tv Shows-->
   </div>
-</div>   
+<!--   Similar tvShows   --> 
+<div class="banner" [style.background-image]="('linear-gradient(rgba(0,0,0,1.0), rgba(52,41,49,0.80)), url('+'https://image.tmdb.org/t/p/w1280'+tvshow?.backdrop_path+')')">
+  <div class="Similar-tvShows">
+    <h1 tabindex="0" class="ml-5" style="font-size: 50px;font-weight: 600; text-align: center;">SIMILAR TV SHOWS</h1>
+    <app-all-tv-shows [tvshows]="SimilarTvShows"></app-all-tv-shows>    
+  </div>      
+  </div>   
+</div>
+<!--   end similar tvshows -->
 <ngx-spinner
 bdColor="#000"
 size="medium"
