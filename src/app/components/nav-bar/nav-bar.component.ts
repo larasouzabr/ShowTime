@@ -16,10 +16,8 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.themeService.isHighConstrast.subscribe(data => {
-      console.log(data)
-    })
   }
+  
   toggleHighContrast(){
     this.highContrast = !this.highContrast
     this.themeService.toggleHighConstrast(this.highContrast)

@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
   searchMovies() {
     this.movieserv.searchMovies(this.searchStr).subscribe(res => {
       this.searchRes = res.results;
-      console.log(this.searchRes)
     })
   }
 }

@@ -31,7 +31,6 @@ export class MoviesComponent implements OnInit {
   getAllMovies(page: number) {
     this.movieserv.getAllMovies(page).subscribe(
       res => {
-        console.log(res)
         this.total_items = res.total_results;
         this.allMovies = res;
 

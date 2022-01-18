@@ -37,7 +37,6 @@ export class MovieByGenreComponent implements OnInit {
   getMoviesByGenre(id:number) {
     this.movieserv.getMoviesByGenre(id).subscribe(
       res => {
-        console.log(res)
         this.movies = res;
       });
   }

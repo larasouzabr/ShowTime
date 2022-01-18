@@ -1,21 +1,24 @@
-<form>
-    <div class="form-group mt-5 d-flex row justify-content-center">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for movies or Tv shows" [(ngModel)]="searchStr"
-                name="searchStr" (keyup.enter)="searchMovies()">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" style="background-color: blueviolet;border-color: blueviolet;" type="button" (click)="searchMovies()">Go!</button>
-            </span>
-        </div>
-        <!-- /input-group -->
-    </div>
-</form>
 
-<div *ngIf="searchRes" class="p-5">
-    <h3 class="d-flex row justify-content-center m-5" style="font-size: 70px; font-weight: 900;">Search Results</h3>
-    <div class="row d-flex flex-wrap justify-content-center">
-        <div class="m-2" *ngFor="let movie of searchRes;">
-            <app-search-result [movie]="movie"></app-search-result>
+<div class="mr-4">
+    <form>
+        <div class="form-group mt-5 d-flex row justify-content-center">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for movies or Tv shows" [(ngModel)]="searchStr"
+                    name="searchStr" (keyup.enter)="searchMovies()">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" style="background-color: blueviolet;border-color: blueviolet;" type="button" (click)="searchMovies()">Go!</button>
+                </span>
+            </div>
         </div>
+    </form>
+    
+    <div *ngIf="searchRes" class="p-5">
+        <h3 class="d-flex row justify-content-center m-5" style="font-size: 70px; font-weight: 900;">Search Results</h3>
+        <div class="row d-flex flex-wrap justify-content-center">
+            <div class="m-2" *ngFor="let movie of searchRes;">
+                <app-search-result [movie]="movie"></app-search-result>
+            </div>
+    </div>
 </div>
+
 
