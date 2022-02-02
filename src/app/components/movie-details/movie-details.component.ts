@@ -7,7 +7,6 @@ import { MovieDetails } from 'src/app/dtos/movieDetails';
 import { MovieVideo } from 'src/app/dtos/movieVideo';
 import { MovieService } from 'src/app/services/movie.service';
 import { NgxSpinnerService } from "ngx-spinner";
-import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -25,7 +24,6 @@ export class MovieDetailsComponent implements OnInit {
     private movieserv: MovieService,
     private route: ActivatedRoute,
     private spinner: NgxSpinnerService,
-    private themeService: ThemeService
   ) { }
 
   ngOnInit(): void {

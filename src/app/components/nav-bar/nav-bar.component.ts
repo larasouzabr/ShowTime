@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
-import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,18 +8,11 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class NavBarComponent implements OnInit {
 
-  highContrast!: boolean
 
   constructor(
-    private themeService: ThemeService
   ) { }
 
   ngOnInit(): void {
-  }
-  
-  toggleHighContrast(){
-    this.highContrast = !this.highContrast
-    this.themeService.toggleHighConstrast(this.highContrast)
   }
 
   @HostListener('window:scroll', ['$event'])
