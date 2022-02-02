@@ -6,7 +6,6 @@
       <div class="slick-item" tabindex="0" *ngFor="let m of movies?.results" ngxSlickItem>
         <a [routerLink]="'/movies/detail/' + m?.id">
           <img
-          class="m-2"
             src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}" 
             alt="{{ m.title}}"
             *ngIf="m?.poster_path"
