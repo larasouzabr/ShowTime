@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiKey, BaseUrl } from 'src/environments/environment';
-import { map } from 'rxjs/operators'
-import { MovieResults } from '../dtos/Movie';
 
 @Injectable({
   providedIn: 'root'
