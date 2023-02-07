@@ -2,6 +2,11 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2)
     border-radius: 4px
 
+.main-content,.info, .genre-section
+    display: flex
+    flex-direction: row
+
+
 .movie-main-title
     font-size: 60px
     line-height: 1.2
@@ -11,17 +16,32 @@
 
 .movie-overview
     line-height: 1.2
-    
+    font-size: 23px
+    margin-bottom:3rem
+    margin-left:1rem
+    padding: 1rem
+
+.similar-movies-text  
+    font-size: 50px
+    font-weight: 600
+    text-align: center
+    margin-left: 3rem
+
 .banner
     background-position: top center
     background-size: cover
     
+.genre-section
+    padding: 1rem
+    margin-top: 3rem
+    margin-left: 0.5rem    
 
 .mi-star // icon of the star
     font-size: 14px
 
 .infoMain
     background-color: rgba(0, 0, 0, 0.2)
+    margin: 3rem
 
 .infoElement
     font-size: 15px
@@ -29,5 +49,67 @@
     border-color: #bf40bf  
     border-radius: 30px
 
-.movie-overview-HC
-    color: yellow    
+@media only screen and (max-device-width:700px)
+    img
+        width: 150px
+
+    .movie-main-title
+        font-size: 20px
+        margin:0
+
+    .infoElement
+        font-size: 10px
+
+    .movie-overview
+        margin: 0
+        font-size: 10px
+
+    .infoMain
+        font-size: 10px
+        margin:0px 20px 0px 20px
+        
+    .genre-section
+        padding: 1rem
+        margin-top: 1rem
+        margin-left: 0.5rem    
+        margin-bottom:1rem
+
+    .similar-movies-text  
+        font-size: 30px
+        margin: 0
+
+    .main-content
+        display: flex
+        flex-direction: column
+        align-items: center
+
+
+@media only screen and (max-device-width:1000px) and (min-device-width:700px)
+    .movie-main-title
+        font-size: 25px
+
+    .movie-overview
+        margin: 0
+        font-size: 20px
+
+
+    .infoMain
+        font-size: 20px
+        margin:0px 20px 0px 20px
+    img
+        width: 280px
+        
+    .genre-section
+        padding: 1rem
+        margin-top: 1rem
+        margin-left: 0.5rem    
+        margin-bottom:1rem
+
+    .similar-movies-text  
+        font-size: 30px
+        margin: 0
+
+    .main-content
+        display: flex
+        flex-direction: column
+        align-items: center

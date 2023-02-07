@@ -10,4 +10,36 @@
 .no-poster
     width: 300px
     height: 450px    
-               
+
+
+@media only screen and (max-device-width:1000px) and (min-device-width:700px)
+    .tvshows_item
+        &:hover
+            border: none
+            -webkit-transform: none
+            -ms-transform: none
+            transform: none
+            border-radius: none
+            
+    img
+        width: 150px
+  
+    .no-poster
+        width: 150px
+        height: 225px 
+
+
+@media only screen and (max-device-width:700px)
+    .tvshows_item
+        &:hover
+            border: none
+            -webkit-transform: none
+            -ms-transform: none
+            transform: none
+            border-radius: none
+    img
+        width: 100px
+
+    .no-poster
+        width: 100px
+        height: 150px                    

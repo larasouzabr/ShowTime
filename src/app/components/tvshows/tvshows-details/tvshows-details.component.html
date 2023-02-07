@@ -1,6 +1,6 @@
 <div class="flex-wrap">
   <div class="banner" [style.background-image]="('linear-gradient(rgba(52,41,49,0.80), rgba(0,0,0,1.0)), url('+'https://image.tmdb.org/t/p/w1280'+tvshow?.backdrop_path+')')">
-    <div class="d-flex">
+    <div class="main-content-tv-show">
       <div>
         <img src="https://image.tmdb.org/t/p/w500/{{ tvshow?.poster_path }}" alt="{{ tvshow?.title }}" tabindex="0"
           class="img-container" />
@@ -8,10 +8,10 @@
 
       <div class="pl-2">
         <h2 class="tvshow-main-title mt-5 d-flex justify-content-center" tabindex="0">{{ tvshow?.name }}</h2>
-        <p class="tagline p-2 m-2 d-flex justify-content-center" tabindex="0" style="font-size: 20px;"> {{tvshow?.tagline}} </p>
-        <div class="infoMain m-5">
-          <label tabindex="0" class="tvshow-overview ml-3 mb-5 p-3 text-justify" style="font-size: 23px;">{{ tvshow?.overview }}</label>
-          <div class="info row mt-2 ml-3 mb-3 d-flex justify-content-center">
+        <p *ngIf="tvshow?.tagline" class="tagline p-2 m-2 d-flex justify-content-center" tabindex="0"> {{tvshow?.tagline}} </p>
+        <div class="infoMain">
+          <label tabindex="0" class="tvshow-overview text-justify">{{ tvshow?.overview }}</label>
+          <div class="info mt-2 ml-3 mb-3 justify-content-center">
             <p class="infoElement p-2 m-2" tabindex="0"> {{tvshow?.first_air_date | date:'y'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{tvshow?.vote_average}}<mat-icon class="mi-star ml-2">grade
               </mat-icon>
@@ -21,7 +21,7 @@
           </div>
           
         <!--  genre -->
-          <div class="mt-5 ml-4 pb-3 d-flex justify-content-center">
+          <div class="justify-content-center genre-section">
             <button *ngFor="let genre of tvshow?.genres" mat-raised-button color="primary" aria-label="genres"
               class="button-genre mr-2">{{genre.name}}</button>
           </div>
@@ -33,7 +33,7 @@
 <!--   Similar tvShows   --> 
 <div class="banner" [style.background-image]="('linear-gradient(rgba(0,0,0,1.0), rgba(52,41,49,0.80)), url('+'https://image.tmdb.org/t/p/w1280'+tvshow?.backdrop_path+')')">
   <div class="Similar-tvShows">
-    <h1 tabindex="0" class="ml-5" style="font-size: 50px;font-weight: 600; text-align: center;">SIMILAR TV SHOWS</h1>
+    <h1 tabindex="0" class="similar-tv-show-text" >SIMILAR TV SHOWS</h1>
     <app-all-tv-shows [tvshows]="SimilarTvShows"></app-all-tv-shows>    
   </div>      
   </div>   

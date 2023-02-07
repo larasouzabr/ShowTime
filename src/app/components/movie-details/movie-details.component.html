@@ -1,6 +1,6 @@
 <div class="flex-wrap">
   <div class="banner" [style.background-image]="('linear-gradient(rgba(52,41,49,0.80), rgba(0,0,0,1.0)), url('+'https://image.tmdb.org/t/p/w1280'+movie?.backdrop_path+')')">
-    <div class="d-flex">
+    <div class="main-content">
       <div>
         <img src="https://image.tmdb.org/t/p/w500/{{ movie?.poster_path }}" alt="{{ movie?.title }}" tabindex="0"
           class="img-container" />
@@ -8,17 +8,16 @@
 
       <div class="pl-2">
         <h2 class="movie-main-title mt-2 p-3 d-flex justify-content-center" tabindex="0">{{movie?.title}}</h2>
-        <div class="infoMain m-5">
+        <div class="infoMain">
           <label tabindex="0"
-            class="movie-overview ml-3 mb-5 text-justify p-3" style="font-size: 23px;">{{ movie?.overview }}</label>
-          <div class="info row mt-2 ml-3 mb-3 d-flex justify-content-center">
+            class="movie-overview text-justify">{{ movie?.overview }}</label>
+          <div class="info mt-2 ml-3 mb-3 justify-content-center">
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.release_date | date:'y'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{movie?.vote_average}}<mat-icon class="mi-star ml-2">grade</mat-icon></p>
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.runtime }}min </p>
-          </div>
-          
+          </div>   
         <!--  genre -->
-          <div class="mt-5 ml-2 p-3 d-flex justify-content-center">
+          <div class="justify-content-center genre-section">
             <a
             *ngFor="let genre of movie?.genres"
             routerLink="/genres/movie/{{genre.id}}/{{ genre.name }}"
@@ -35,7 +34,7 @@
 <!--    Similar movies   --> 
 <div class="banner" [style.background-image]="('linear-gradient(rgba(0,0,0,1.0), rgba(52,41,49,0.80)), url('+'https://image.tmdb.org/t/p/w1280'+movie?.backdrop_path+')')">
   <div class="Similar-movies">
-    <h1 tabindex="0" class="ml-5" style="font-size: 50px;font-weight: 600; text-align: center;">Similar Movies</h1>
+    <h1 tabindex="0" class="similar-movies-text">Similar Movies</h1>
     <app-card-all-together [movies]="SimilarMovies"></app-card-all-together>
   </div>   
 <!--End Similar Movies--> 

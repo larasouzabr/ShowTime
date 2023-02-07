@@ -3,12 +3,21 @@
     border-radius: 4px
     position: relative
 
+    
+.main-content-tv-show,.info, .genre-section
+    display: flex
+    flex-direction: row
+
+
 .banner
     background-position: top center
     background-size: cover
-    
+
+.tagline
+    font-size: 23px
+
 .tvshow-main-title
-    font-size: 70px
+    font-size: 60px
     line-height: 1.2
 
 .button-genre
@@ -18,14 +27,101 @@
 .infoMain
     background-color: rgba(0, 0, 0, 0.2)
 
+.genre-section
+    padding: 1rem
+    margin-top: 3rem
+    margin-left: 0.5rem 
+        
 .tvshow-overview
     line-height: 1.2
+    font-size: 23px
+    margin-bottom:3rem
+    margin-left:1rem
+    padding: 1rem
 
 .mi-star // icon of the star
     font-size: 14px
+
+.similar-tv-show-text  
+    font-size: 50px
+    font-weight: 600
+    text-align: center
+    margin-left: 3rem    
 
 .infoElement
     font-size: 15px
     border: 2px solid 
     border-color: #bf40bf  
     border-radius: 30px
+
+@media only screen and (max-device-width:700px)
+    img
+        width: 150px
+
+    .img-container
+        margin-top: 2rem
+    .tvshow-main-title
+        font-size: 20px
+        margin:0
+
+    .infoElement
+        font-size: 10px
+
+    .tagline
+        font-size: 13px
+            
+    .tvshow-overview
+        margin: 0
+        font-size: 10px
+
+    .infoMain
+        font-size: 10px
+        margin:0px 20px 0px 20px
+        
+    .genre-section
+        padding: 1rem
+        margin-top: 1rem
+        margin-left: 0.5rem    
+        margin-bottom:1rem
+
+    .similar-tv-show-text  
+        font-size: 25px
+        margin: 0
+
+    .main-content-tv-show
+        display: flex
+        flex-direction: column
+        align-items: center
+
+
+@media only screen and (max-device-width:1000px) and (min-device-width:700px)
+    .tvshow-main-title
+        font-size: 25px
+
+    .tvshow-overview
+        margin: 0
+        font-size: 20px
+
+    .tagline
+        font-size: 13px
+
+    .infoMain
+        font-size: 20px
+        margin:0px 20px 0px 20px
+    img
+        width: 280px
+        
+    .genre-section
+        padding: 1rem
+        margin-top: 1rem
+        margin-left: 0.5rem    
+        margin-bottom:1rem
+
+    .similar-tv-show-text  
+        font-size: 25px
+        margin: 0
+
+    .main-content-tv-show
+        display: flex
+        flex-direction: column
+        align-items: center
