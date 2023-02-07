@@ -11,7 +11,7 @@
         <div class="infoMain">
           <label tabindex="0"
             class="movie-overview text-justify">{{ movie?.overview }}</label>
-          <div class="info mt-2 ml-3 mb-3 justify-content-center">
+          <div class="info mt-2 ml-3 mb-3 justify-content-center ">
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.release_date | date:'y'}}</p>
             <p class="infoElement p-2 m-2" tabindex="0">{{movie?.vote_average}}<mat-icon class="mi-star ml-2">grade</mat-icon></p>
             <p class="infoElement p-2 m-2" tabindex="0"> {{movie?.runtime }}min </p>
@@ -23,7 +23,7 @@
             routerLink="/genres/movie/{{genre.id}}/{{ genre.name }}"
           >
             <button  mat-raised-button color="primary" aria-label="genres"
-              class="button-genre mr-2">{{genre.name}}</button>
+              class="button-genre">{{genre.name}}</button>
             </a>
           </div>
       <!--   end of genre -->
